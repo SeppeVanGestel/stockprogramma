@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Stockprogramma{% endblock %}
+
+{% block content %}
+
+    <h1>Stock management applicatie: Overzicht</h1>
+    <p class="important">
+        De school heeft aan jullie gevraagd om een stock beheer applicatie te bouwen voor de kookafdeling.
+        Ze hebben daar een stock aan producten waarvan ze de hoeveelheden willen bijhouden. En een verwittiging krijgen als de stock 
+        te laag is. Zodat er bijbesteld kan worden. 
+        Wanneer er producten toegevoegd of gebruikt worden uit de stock. Is het de bedoeling dat deze gescand worden met een barcode 
+        scanner app. Waarin dan wordt doorgegeven of het product uit de stock genomen wordt of aan de stock wordt toegevoegd. 
+        De barcode scanner geeft dit door aan de rest-api. Ook moet er een desktop applicatie of website zijn waar producten, 
+        leveranciers en eventueel users kunnen toegevoegd worden. En de stock gemanaged.<br/>
+        <a href='/log/home'><h2>ga naar home</h2></a>
+    </p>
+{% endblock %}

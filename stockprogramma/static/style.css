@@ -1,0 +1,140 @@
+
+/* padding is box groter maken.*/
+/* margin is space aan buitenkant.*/
+
+body {
+    font-family: verdana; 
+    background-color: rgb(127, 137, 165);
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+*{margin: 0px;
+    padding: 0px;
+
+}
+
+ul{
+    display:block;
+    background-color:#008080;
+    height:10vh;
+}
+
+ul li{
+    display: inline-block;
+    left: 30%;
+    position: relative;
+    top: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+    color:white;
+    margin-right: 20px;
+}
+ul li a:hover{
+    color: orange;
+}
+
+.dropdown{
+    position:absolute;
+    background-color: #292929;
+    padding: 10px 0px 10px 0px;
+    margin-left: -20px;
+    display: none;
+}
+
+.dropdown a{
+    position: relative;
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+}
+#products:hover .dropdown{
+    display:block ;
+
+}
+
+header{
+    position: top;
+    background-color: #008080;
+    width: 100%;
+    color:white;
+}
+
+footer{
+    position: bottom;
+    background-color: #008080;
+    width: 100%;
+    color:rgb(255, 255, 255);
+}
+
+
+header h2{
+    position: absolute;
+    margin-top: 20px;
+    left: 2%;
+}
+header{
+    height: 10vh;
+}    
+ footer{
+     height: 10vh;
+     margin-top: auto;
+     
+}
+
+footer h2{
+    position: absolute;
+    margin-top: 20px;
+    left: 1%;
+
+}
+
+.nav{
+    position: absolute;
+    width:100%;
+}
+
+.nav a{
+    position: relative;
+    left: 45%;
+    top:20px ;
+    color:white ;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+footer p{
+    position: absolute;
+    left: 48%;
+    bottom: 20px;
+    color: orange;
+}
+
+#content{ /* #element*/
+     padding: 10px;
+     border: 30px;
+     margin: 60px;
+     background-color: rgb(255, 255, 255);
+     
+ }
+
+ .cont{ /* .class*/
+     padding: 10px;
+     border: 30px solid skyblue;
+     margin: 60px;
+     background-color: rgb(48, 114, 48);
+ }
+
+ .box-one{
+     background-color: blueviolet;
+     border: 0 solid cornflowerblue
+
+ }
+
+ .important{
+    padding: 10px;
+
+ }

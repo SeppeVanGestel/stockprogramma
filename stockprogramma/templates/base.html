@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <link rel="stylesheet" href="static/style.css" />
+    <title>{% block title %}{% endblock %} - My Webpage</title>    
+</head>
+<body>
+    <header>
+        <h2>Stock</h2>
+        <ul>
+            <li><a href="/log/home">Home</a></li>
+            <li id="products"><a href="">Acties</a>
+                <div class = "dropdown">
+                    <a href="">Consult Stock</a>
+                    <a href="/log/add_product">Add Product</a>
+                    <a href="">Suppliers</a>
+                    <a href="">Extra</a>
+                </div>
+            </li>
+            <li><a href="/log/signup">Signup</a></li> <!-- http://127.0.0.1:5000/log/signup -->
+            <li><a href="/log/login">LOGIN</a></li>
+        </ul>
+    </header>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <footer>
+        <h2>&copy; Copyright Reserved</h2><p>Coder & designer <br>Seppe Van Gestel</p>
+        
+    </footer>
+</body>
+</html>
