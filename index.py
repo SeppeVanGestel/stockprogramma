@@ -1,2 +1,5 @@
-from stockprogramma.main import app
 
+from stockprogramma import app
+
+if __name__ == "__main__":
+    app.run()

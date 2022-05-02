@@ -2,12 +2,9 @@ from flask import Flask, render_template
 from flask_restful import Api
 import os, sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-
-
-from resources.route import initialize_routes
-from database.db import initialize_db
+from .resources.route import initialize_routes
+from .database.db import initialize_db
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 import os
