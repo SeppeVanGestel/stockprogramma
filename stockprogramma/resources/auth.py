@@ -1,4 +1,4 @@
-from flask import request
+from flask import Flask, jsonify, request
 from stockprogramma.database.models.users import User
 from flask_restful import Resource
 from flask import Response, request
@@ -15,9 +15,11 @@ class SignupUi(Resource): #signup erft van resource(een class uit flas restfull.
  def post(self):
 
         try:
-            name = request.form.get("name") # name = vanwaar komt "name"??? index -> <input type="text" class="form-control" name="name">
-            pwd = request.form.get("password") #
-            username = request.form.get("username") #
+            body = request.get_json()
+            user = User(**body).get()
+            name = request.get_json("name") # name = vanwaar komt "name"??? index -> <input type="text" class="form-control" name="name">
+            pwd = request.get_json("password") #
+            username = request.get_json("username") #
             user = User(name=name, password=pwd, username=username) #
             user.hash_password()
             user.save()
@@ -36,8 +38,8 @@ class LoginUi(Resource): # het bearer token moet hier ergens meegegeven worden o
     def post(self):
         
         try:
-            user = User.objects.get(name=request.form.get("name")) # name = request.form.get("name")
-            authorized = user.check_password(request.form.get("password")) # pwd = request.form.get("password")
+            user = user.get_json(force=True) 
+            authorized = user.check_password(request.get_json("password")) # pwd = request.form.get("password")
             if not authorized:
                 return {'error': 'Email or password invalid'}, 401
             expires = datetime.timedelta(days=7)
