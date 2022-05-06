@@ -5,7 +5,7 @@ from stockprogramma.database.models.product import Product
 class User(db.Document):
     name = db.StringField(required=True, unique=True)
     password = db.StringField(required=True)
-    username = db.StringField(required=True)
+    email = db.StringField(required=True)
     products = db.ListField(db.ReferenceField('Product', reverse_delete_rule=db.PULL))
 
     def hash_password(self):
