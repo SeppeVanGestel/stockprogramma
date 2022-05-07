@@ -17,7 +17,7 @@ class SignupUi(Resource): #signup erft van resource(een class uit flas restfull.
  def post(self):
 
         try:
-            body = request.get_json()
+            body = request.get_json() #{'name': 'test3', 'password': 'roest', 'username': 'seppevangestel53@gmail.com'}
             print(body)
             user = User(**body) # ** geeft 
             user.hash_password()

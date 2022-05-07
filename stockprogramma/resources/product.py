@@ -1,9 +1,12 @@
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask import Response, request
 from flask_restful import Resource
-
+from flask import jsonify
 from stockprogramma.database.models.product import Product
 from stockprogramma.database.models.users import User
+
+
+
 
 from mongoengine.errors import FieldDoesNotExist, \
 NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
@@ -22,12 +25,14 @@ class ProductsApi(Resource):
         
         try:
             user_id = get_jwt_identity()
+            print(user_id)
             body = request.get_json()
+            print(body)
             user = User.objects.get(id=user_id)
             product = Product(**body, added_by=user.to_dbref())
             product.save()
             user.update(push__products=product)
-            user.save()
+            user.save() # user = User(**body).save() # sla data van json op in de db
             id = product.id
             return {'id': str(id)}, 200
 
